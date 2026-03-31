@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Legal Compliance Services | LegalMitraHub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+:root{
+--navy:#0A1F44;
+--gold:#F5A623;
+--bg:#F6F8FB;
+}
+
+body{
+margin:0;
+font-family:Inter,sans-serif;
+background:var(--bg);
+}
+
+/* SCROLL BAR INDICATOR */
+.progress{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+background:linear-gradient(90deg,#F5A623,#FFD27F);
+width:0%;
+z-index:999;
+}
+
+/* HERO */
+.hero{
+background:radial-gradient(circle at top,#0A1F44,#020b1c);
+color:white;
+padding:120px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:48px;
+font-weight:900;
+}
+
+.hero p{
+opacity:0.85;
+}
+
+/* CONTAINER */
+.container{
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
+}
+
+/* SECTION */
+.section{
+margin-top:80px;
+}
+
+h2{
+color:#0A1F44;
+font-weight:900;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+/* CARD */
+.card{
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(12px);
+padding:25px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:0.4s;
+transform:translateY(40px);
+opacity:0;
+}
+
+.card.show{
+transform:translateY(0);
+opacity:1;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+}
+
+/* ICON */
+.icon{
+font-size:28px;
+color:#F5A623;
+margin-bottom:10px;
+}
+
+/* CTA */
+.cta{
+background:linear-gradient(135deg,#FFF5E6,#FFE2B8);
+padding:50px;
+border-radius:20px;
+text-align:center;
+margin-top:60px;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:14px 28px;
+background:#F5A623;
+color:#0A1F44;
+border-radius:12px;
+font-weight:700;
+text-decoration:none;
+}
+
+/* FLOAT BUTTON */
+.float-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#F5A623;
+padding:14px 18px;
+border-radius:50px;
+font-weight:700;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+<section class="hero">
+<h1>Legal Compliance Services</h1>
+<p>Stay compliant, secure, and grow your business confidently.</p>
+</section>
+
+<div class="container">
+
+<div class="section">
+<h2>Our Compliance Services</h2>
+
+<div class="grid">
+
+<div class="card"><div class="icon"><i class="fa-solid fa-building"></i></div>Corporate Compliance</div>
+<div class="card"><div class="icon"><i class="fa-solid fa-calculator"></i></div>Tax Compliance</div>
+<div class="card"><div class="icon"><i class="fa-solid fa-users"></i></div>Labour Compliance</div>
+<div class="card"><div class="icon"><i class="fa-solid fa-receipt"></i></div>GST Compliance</div>
+<div class="card"><div class="icon"><i class="fa-solid fa-file-contract"></i></div>Secretarial Compliance</div>
+
+</div>
+</div>
+
+<div class="cta">
+<h2>Stay Fully Compliant</h2>
+<p>We handle everything while you grow your business.</p>
+<a href="index.html#contact" class="btn">Get Started</a>
+</div>
+
+</div>
+
+<a href="index.html#contact" class="float-btn">Contact</a>
+
+<script>
+// SCROLL PROGRESS
+window.onscroll = function() {
+let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+document.getElementById("progress").style.width = (winScroll / height) * 100 + "%";
+};
+
+// SCROLL ANIMATION
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', ()=>{
+cards.forEach(card=>{
+if(card.getBoundingClientRect().top < window.innerHeight-100){
+card.classList.add('show');
+}
+});
+});
+</script>
+
+</body>
+</html>
